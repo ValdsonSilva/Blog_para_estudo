@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog pessoal</title>
+    <link rel="stylesheet" type="text/css" href={% static 'home.css' %}/>
+</head>
+<body>
+
+    <header>
+        <h1 class="meu_nome"> Valdson Macedo </h1>
+        <nav class="navegacao">
+            <a class="bo b1">Sobre mim</a>
+
+            <a class="bo b2" href={% url 'contato' %}>
+                Contato
+            </a>
+
+            <a class="bo b3">Estilo de vida</a>
+            <a class="bo b4">Universidade</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="conteudo_principal">
+                Olá, sou <b>Valdson Macedo</b>, um apaixonado pela igreja de cristo(católica) e esportes em geral. 
+            Neste pequeno espaço na internet, compartilho minhas experiências, 
+            reflexões e descobertas sobre minha vida. Sou um eterno otimista, 
+            sempre em busca de inspiração e crescimento pessoal, e estou animado para compartilhar um pouco do meu mundo com você. 
+            Espero que encontre aqui uma dose de motivação, conhecimento e entretenimento. Seja bem-vindo(a) ao meu universo!
+        </div>
+
+        <div class="conteudo_secundario">
+            <img src={% static "images/eu.jpeg" %} class="foto" />
+        <div>
+       
+        {% comment %} <h1>E aaaaeee</h1>
+
+  
+        <p>{{ eu }}</p>
+    
+        <p>{{ namorada }}</p> {% endcomment %}
+
+    <main>
+
+    <footer class="baixo">
+    </footer>
+
+</body>
+</html>

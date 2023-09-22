@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(20, 120, 226);
+}
+
+@keyframes fade {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.meu_nome {
+    color: rgb(250, 235, 215);
+    animation: fade 2s infinite;
+    font-weight: 800;
+}
+
+header {
+    display: flex;
+    justify-content:space-around;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(104, 171, 243);
+    height: 150px;
+}
+
+.navegacao {
+    display: flex;
+    justify-content: space-around;
+    width: 700px;
+    align-items: center;
+}
+
+.bo {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(208, 154, 29); /* Cor de fundo do botão */
+    color: rgb(244, 231, 231); /* Cor do texto do botão */
+    text-decoration: none; /* Remover sublinhado padrão de links */
+    border: none; /* Remover borda padrão */
+    border-radius: 10px; /* Arredondar as bordas do botão */
+    cursor: pointer; /* Cursor de mão para indicar que é clicável */
+    font-size: 20px;
+    font-weight: 600;
+    transition: transform 0.3s ease; /* Adicionando uma transição suave para a propriedade transform */
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+.bo:hover {
+    background-color: rgb(240, 248, 255);
+    color: rgb(20, 120, 226);
+    /* padding: 20px 60px; */
+    font-size: 25px;
+    transform: scale(1.2); /* Aplicando uma transformação no evento hover */
+}
+
+main {
+    background-color: rgb(14, 69, 85);
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    align-items: center;
+}
+
+.conteudo_principal {
+
+    text-indent: 10px;
+    font-size: 2.5vh;
+    width: 800px;
+    height: 300px;
+    color: rgb(226, 216, 216);
+    text-align: justify;
+    line-height: 45px;
+    /* background-color: rgb(0, 0, 0); */
+}
+
+.foto {
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+}

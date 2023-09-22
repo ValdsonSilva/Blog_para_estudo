@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de contato</title>
+    <link rel="stylesheet" type="text/css" href={% static "contato.css" %}/>
+</head>
+<body>
+
+    <form class="fomulario">
+        <h1>Formulário</h1>
+
+        {% comment %} Nome {% endcomment %}
+        <input type="text" placeholder="nome" class="entrada">
+        {% comment %} telefone {% endcomment %}
+        <input type="phone2numeric" placeholder="telefone" class="entrada">
+        {% comment %} email {% endcomment %}
+        <input type="text" placeholder="email" class="entrada">
+        {% comment %} mensagem {% endcomment %}
+        <input type="mensage" placeholder="mensagem" class="entrada">
+
+        <button>Enviar</button>
+
+    </form>
+    
+</body>
+</html>
