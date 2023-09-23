@@ -7,7 +7,7 @@ def home(request):
     
     mensagem = { 
                 'eu' : 'valdson' ,
-                 'namorada' : 'Joelyne meu amor!'
+                'namorada' : 'Joelyne meu amor!'
     }
     
     return render(request, 'home.html', mensagem)

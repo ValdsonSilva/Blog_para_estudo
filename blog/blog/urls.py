@@ -15,19 +15,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from pagina.views import home, contato
+from django.urls import path, include
 # Ativar a ferramenta de depuração
 from django.views.defaults import page_not_found
 from django.urls import re_path
 from django.conf import settings
 from django.conf.urls.static import static
+from pagina import urls
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='url_pagina'),
-    path('contato/', contato, name='contato'),
+    # vai direto pro app pagina
+    path('', include(urls)),
+    # path('', home, name='url_pagina'),
+    # path('contato/', contato, name='contato'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += [

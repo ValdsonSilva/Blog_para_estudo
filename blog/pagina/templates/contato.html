@@ -22,6 +22,11 @@
         <input type="mensage" placeholder="mensagem" class="entrada">
 
         <button>Enviar</button>
+        {% comment %} aqui vai o nome da url e 
+        não do template html {% endcomment %}
+        <a href={% url 'url_pagina' %} >
+            Voltar
+        </a>
 
     </form>
     
