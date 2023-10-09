@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% comment %} css específico {% endcomment %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href={% static "sucesso.css" %}/>
+{% endblock %}
+
+{% comment %} conteúdo específico {% endcomment %}
+{% block content %}
+    <div class="container">
+        <h1>Formulário enviado com sucesso!</h1>
+        <a href={% url 'url_pagina' %} >Voltar</a>
+    </div>
+{% endblock %}

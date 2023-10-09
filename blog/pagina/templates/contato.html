@@ -9,24 +9,23 @@
 </head>
 <body>
 
-    <form class="fomulario">
+    <form class="fomulario" method="post" action="{% url 'inserir_contato' %}">
+        {% csrf_token %}
         <h1>Formulário</h1>
 
         {% comment %} Nome {% endcomment %}
-        <input type="text" placeholder="nome" class="entrada">
+        <input type="text" placeholder="nome" class="entrada" name="nome">
         {% comment %} telefone {% endcomment %}
-        <input type="phone2numeric" placeholder="telefone" class="entrada">
+        <input type="text" placeholder="telefone" class="entrada" name="telefone">
         {% comment %} email {% endcomment %}
-        <input type="text" placeholder="email" class="entrada">
+        <input type="text" placeholder="email" class="entrada" name="email">
         {% comment %} mensagem {% endcomment %}
-        <input type="mensage" placeholder="mensagem" class="entrada">
+        <input type="text" placeholder="mensagem" class="entrada" name="mensagem">
 
-        <button>Enviar</button>
+        <button type="submit">Enviar</button>
         {% comment %} aqui vai o nome da url e 
         não do template html {% endcomment %}
-        <a href={% url 'url_pagina' %} >
-            Voltar
-        </a>
+        <a href={% url 'url_pagina' %} >Voltar</a>
 
     </form>
     

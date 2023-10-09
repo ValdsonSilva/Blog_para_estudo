@@ -53,6 +53,9 @@ button, a {
 button:hover, a:hover {
     padding-left: 6px;
     transform: scale(1.2);
+    background-color: rgb(240, 248, 255);
+    color: rgb(20, 120, 226);
+    font-size: 25px;
 }
 
 a {

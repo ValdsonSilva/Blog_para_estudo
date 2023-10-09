@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href={% static "sucesso.css" %}/>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Mensagens</h2>
+        {% for contato in contatos %}
+            <li>
+                <b>Nome:</b>{{contato.nome}} ---- <b>mensagem:</b>{{contato.mensagem}}
+            </li>
+            
+            <div class='botoes'>
+                <a href="{% url 'editar_contato' contato.id %}">Editar</a>
+                <a href="{% url 'tela_deletar' contato.id %}">Deletar</a>
+            </div>
+        {% endfor %}
+    </div><br>
+    <a href={% url 'url_pagina' %} >Voltar</a>
+{% endblock %}
