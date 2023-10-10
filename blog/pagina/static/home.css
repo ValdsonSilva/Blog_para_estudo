@@ -9,6 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
 }
 
 @keyframes fade {
@@ -35,8 +36,9 @@ header {
 .navegacao {
     display: flex;
     justify-content: space-around;
-    width: 700px;
+    width: 900px;
     align-items: center;
+    /* background-color: black; */
 }
 
 .bo {
@@ -68,26 +70,47 @@ main {
     justify-content: space-around;
     padding-top: 50px;
     align-items: center;
+    padding-bottom: 50px;
 
 }
 
 .conteudo_principal {
-
     text-indent: 10px;
     font-size: 2.5vh;
     width: 800px;
-    height: 300px;
+    height: auto;
     color: rgb(226, 216, 216);
     text-align: justify;
     line-height: 45px;
+    /* background-color: black; */
+}
+
+.conteudo_secundario {
+    /* background-color: black; */
+    height: auto;
+    width: auto;
 }
 
 .foto {
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
 }
 
 .baixo {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    height: 500px;
+    width: 400px;
+    background-color: aqua;
+    margin-top: 50px;
+}
+
+.container_mensagem {
+    display: flex;
+    justify-content: center;
+    /* background-color: black; */
+    margin-bottom: 400px;
+    width: 200px;
 }

@@ -14,10 +14,10 @@
             </li>
             
             <div class='botoes'>
-                <a href="{% url 'editar_contato' contato.id %}">Editar</a>
-                <a href="{% url 'tela_deletar' contato.id %}">Deletar</a>
+                <a href="{% url 'editar_contato' contato.id %}" class="bo">Editar</a>
+                <a href="{% url 'tela_deletar' contato.id %}" class="bo">Deletar</a>
             </div>
         {% endfor %}
     </div><br>
-    <a href={% url 'url_pagina' %} >Voltar</a>
+    <a href={% url 'url_pagina' %} class="bo">Voltar</a>
 {% endblock %}

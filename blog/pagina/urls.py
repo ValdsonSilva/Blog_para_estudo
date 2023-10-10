@@ -3,7 +3,7 @@ from pagina import views
 
 urlpatterns = [
     path('', views.home, name='url_pagina'),
-    path('contato/', views.contato, name='contato'),
+    # path('contato/', views.contato, name='contato'),
     path('inserir_contato', views.inserir_contato, name='inserir_contato'),
     path('sucesso/', views.pagina_sucesso, name='sucesso'),
     path('mensagens/', views.mensagens, name='mensagens'),

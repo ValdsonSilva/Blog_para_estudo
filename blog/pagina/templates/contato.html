@@ -9,18 +9,22 @@
 </head>
 <body>
 
-    <form class="fomulario" method="post" action="{% url 'inserir_contato' %}">
+    <form  class="fomulario" method="post">
         {% csrf_token %}
         <h1>Formulário</h1>
+        {% comment %} Definido no arquivo form.py {% endcomment %}
+        {{form.nome.label_tag}}
+        {{form.nome}}
 
-        {% comment %} Nome {% endcomment %}
-        <input type="text" placeholder="nome" class="entrada" name="nome">
-        {% comment %} telefone {% endcomment %}
-        <input type="text" placeholder="telefone" class="entrada" name="telefone">
-        {% comment %} email {% endcomment %}
-        <input type="text" placeholder="email" class="entrada" name="email">
-        {% comment %} mensagem {% endcomment %}
-        <input type="text" placeholder="mensagem" class="entrada" name="mensagem">
+        {{form.telefone.label_tag}}
+        {{form.telefone}}
+
+        {{form.email.label_tag}}
+        {{form.email}}
+
+        {{form.mensagem.label_tag}}
+        {{form.mensagem}}
+
 
         <button type="submit">Enviar</button>
         {% comment %} aqui vai o nome da url e 

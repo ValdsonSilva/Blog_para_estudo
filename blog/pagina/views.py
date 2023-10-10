@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, HttpResponse
 from .models import Contato
+from .form import ContatoForm # formulário
 
 # Create your views here.
 
@@ -13,6 +14,7 @@ def home(request):
     
     return render(request, 'home.html')
 
+
 # tela de listagem das mensagens
 def mensagens(request):
     
@@ -24,62 +26,46 @@ def mensagens(request):
     return render(request, 'mensagens.html', contatos)
 
 
-def contato(request):
-    
-    mensagem = {'mensagem':"Formulário"}
-    
-    return render(request, 'contato.html', mensagem)
-
 # pagina de sucesso
 def pagina_sucesso(request):
     return render(request, 'sucesso.html')
 
 
+# Processo os dados que vem do form
 def inserir_contato(request):
     if request.method == 'POST':
-        # passando os dados capturados no form
-        nome = request.POST['nome']
-        telefone = request.POST['telefone']
-        email = request.POST['email']
-        mensagem = request.POST['mensagem']
+        form = ContatoForm(request.POST or None)
         
-        # instanciando 
-        contato_form = Contato(nome=nome, telefone=telefone, email=email, mensagem=mensagem)
-        
-        if contato_form.is_valid():
-            
-            contato_form.save()
-            # página de sucesso
-            return redirect('sucesso')
-        
+        # Todos os inputs serão obrigatórios
+        if form: 
+            #salvando os dados
+            if form.is_valid():  
+                form.save()
+                # página de sucesso
+                return redirect('sucesso')
+        else:
+            return HttpResponse("É obrigatória passar todos os dados do formulario!")
+    else:
+        form = ContatoForm()     
     
-    return render(request, 'contato.html')
+    return render(request, 'contato.html', {'form':form})
+
 
 # Função para editar os nossos contatos
 def editar_contato(request, contato_id):
     # Pegar contato especifico pelo id
     contato_especifico = Contato.objects.get(id=contato_id)
     
-    if request.method == 'POST':
-        # Processar dados aqui
-        nome = request.POST['nome']
-        telefone = request.POST['telefone']
-        email = request.POST["email"]
-        mensagem = request.POST['mensagem']
-        
-        # Atualizar os campos do form
-        contato_especifico.nome = nome
-        contato_especifico.telefone = telefone
-        contato_especifico.email = email
-        contato_especifico.mensagem = mensagem
-        
-        # Salvar novos dados do contato
-        if contato_especifico.is_valid():
-            
-            contato_especifico.save()
-            return redirect('mensagens', contato_id=contato_id)
+    form = ContatoForm(request.POST or None, instance=contato_especifico)
     
-    return render(request, 'contato.html', {'contato_especifico':contato_especifico})
+    if form.is_valid():  
+        # Salvar novos dados do contato    
+        contato_especifico.save()
+        return redirect('mensagens')
+    
+    else:
+        return render(request, 'contato.html', {'form':form,'contato_especifico':contato_especifico})
+
 
 # tela que encaminha para deletar contato específico
 def tela_deletar_contato(request, contato_id):
@@ -87,6 +73,7 @@ def tela_deletar_contato(request, contato_id):
     contato_especifico =  Contato.objects.get(id=contato_id)
     print(f'Esse é o id:{contato_especifico}')
     return render(request, 'deletar_contato.html', {'contato':contato_especifico})
+
 
 # view que de fato irá deletar o contato
 def deletar_contato(request, contato_id):

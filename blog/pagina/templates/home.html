@@ -15,9 +15,11 @@
         <nav class="navegacao">
             <a class="bo b1">Sobre mim</a>
 
-            <a class="bo b2" href={% url 'contato' %}>
+            <a class="bo b2" href={% url 'inserir_contato' %}>
                 Contato
             </a>
+
+            <a href="{% url 'mensagens' %}" class="bo mensagem">Mensagens</a>
 
             <a class="bo b3">Estilo de vida</a>
             <a class="bo b4">Universidade</a>
@@ -25,7 +27,6 @@
     </header>
 
     <main>
-
         <div class="conteudo_principal">
                 Olá, sou <b>Valdson Macedo</b>, um apaixonado pela igreja de cristo(católica) e esportes em geral. 
             Neste pequeno espaço na internet, compartilho minhas experiências, 
@@ -35,21 +36,21 @@
         </div>
 
         <div class="conteudo_secundario">
-            <img src={% static "images/eu.jpeg" %} class="foto" />
+            <img src={% static "images/foto.jpeg" %} class="foto" />
         <div>
-       
-        {% comment %} <h1>E aaaaeee</h1>
-
-  
-        <p>{{ eu }}</p>
+        
+        
+    </main>
     
-        <p>{{ namorada }}</p> {% endcomment %}
+    <footer></footer>
 
-    <main>
-
-    <footer class="baixo">
-        <a href="{% url 'mensagens' %}" class="bo">Mensagens</a>
-    </footer>
+    {% comment %} <footer class="baixo">
+        <div>
+            <div class="container_mensagem">
+                <a href="{% url 'mensagens' %}" class="bo mensagem">Mensagens</a>
+            </div>
+        </div>
+    </footer> {% endcomment %}
 
 </body>
 </html>

@@ -5,6 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 h1, h2 {
@@ -13,6 +14,7 @@ h1, h2 {
     font-weight: 200;
     color: rgb(240, 248, 255);
     text-shadow: 1px 1px rgb(0, 0, 0);
+    margin-inline: 100px;
 }
 
 .container {
@@ -23,7 +25,7 @@ h1, h2 {
 
     background-color: rgb(20, 120, 226);
 
-    width: 800px;
+    width: auto;
     height: auto;
     box-shadow: 1px 1px 2px 2px #000;
     border-radius: 25px;
@@ -33,7 +35,32 @@ h1, h2 {
 li {
     color: aliceblue;
     font-size: 25px;
-    margin-bottom: 10px;
+    margin: 10px 10px;
+}
+
+.bo {
+    display: flex;
+    padding: 10px 20px;
+    background-color: rgb(208, 154, 29); /* Cor de fundo do botão */
+    color: rgb(244, 231, 231); /* Cor do texto do botão */
+    text-decoration: none; /* Remover sublinhado padrão de links */
+    border: none; /* Remover borda padrão */
+    border-radius: 10px; /* Arredondar as bordas do botão */
+    cursor: pointer; /* Cursor de mão para indicar que é clicável */
+    font-size: 20px;
+    font-weight: 600;
+    transition: transform 0.3s ease; /* Adicionando uma transição suave para a propriedade transform */
+    box-shadow: 1px 1px 1px 1px black;
+    height: 35px;
+    width: 150px;
+}
+
+.bo:hover {
+    background-color: rgb(240, 248, 255);
+    color: rgb(20, 120, 226);
+    /* padding: 20px 60px; */
+    font-size: 25px;
+    transform: scale(1.2); /* Aplicando uma transformação no evento hover */
 }
 
 .botoes {
