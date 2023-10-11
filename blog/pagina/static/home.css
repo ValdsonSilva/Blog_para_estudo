@@ -114,3 +114,61 @@ main {
     margin-bottom: 400px;
     width: 200px;
 }
+
+.botao_hamburguer {
+    display: none;
+}
+
+/* tela grande */
+@media (max-width: 1372px) {
+    /* .botao_hamburguer {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #333;
+        margin: 5px 0;
+        cursor: pointer;
+    } */
+
+    main {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .navegacao {
+        display: none;
+    }
+
+    .one, .two, .three {
+        background-color: rgb(229, 229, 229);
+        height: 5px;
+        width: 100%;
+        margin: 6px auto;
+    }
+
+    .botao_hamburguer {
+        display: block;
+        width: 40px;
+        height: 30px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 936px) {
+    .conteudo_principal {
+        font-size: 2vh;
+        /* background-color: black; */
+        width: 500px;
+    }
+}
+
+@media (max-width: 425px) {
+    .foto {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+}
